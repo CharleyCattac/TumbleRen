@@ -1,3 +1,2 @@
-# TumbleRen1.0
-Final version;
-Tumblr client for Android OS; IDE: Android Studio; Additional help: JumblrClient (Java);
+# Tumblr client for Android OS
+Final version; IDE: Android Studio; Additional help: JumblrClient (Java);
