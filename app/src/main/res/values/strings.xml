@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">TumbleRen</string>
+    <item name="item_click_support" type="id" />
+
+    <string name="title_activity_blog">BlogActivity</string>
+    <string name="name_hint">Name</string>
+    <string name="title_hint">Title</string>
+    <string name="describtion_hint">Describtion</string>
+    <string name="likes_hint">0</string>
+    <string name="posts_hint">0</string>
+    <string name="followers_hint">0</string>
+    <string name="url_hint">Source Url</string>
+
+    <string name="date_hint">Date</string>
+    <string name="summary_hint">Summary</string>
+    <string name="tags_hint">Tags</string>
+
+    <string name="content_hint">Content</string>
+
+    <string name="blog">Blog:</string>
+    <string name="type">Type:</string>
+    <string name="tag">Tag:</string>
+    <string name="limit">Limit:</string>
+    <string name="blog_hint">e.g. florbe-triz</string>
+    <string name="type_hint">e.g. text</string>
+    <string name="tag_hint">e.g. cats</string>
+    <string name="limit_hint">e.g. 20</string>
+    <string name="blog_default">*Default: charleycattac</string>
+    <string name="type_invalid">*Type must be only of following values:
+                                text/link/query/photo/video/audio;</string>
+    <string name="tag_invalid">*Tag must contain at least one character;</string>
+    <string name="limit_invalid">*Limit must contain only numbers from 1 to 50;</string>
+
+
+    <string name="likes">Likes</string>
+    <string name="posts">Posts</string>
+    <string name="followers">Followers</string>
+
+    <string name="reblog_sign">\uf079</string>
+    <string name="like_sign">\uf004</string>
+    <string name="tag_sign">\uf02b</string>
+    <string name="search_sign">\uf002</string>
+    <string name="settings_sign">\uf085</string>
+    <string name="apply_button">Apply</string>
+    <string name="caption_hint">Caption</string>
+    <string name="song_hint">Song</string>
+    <string name="update_hint">Update</string>
+    <string name="artist_hint">Artist</string>
+    <string name="phrase_hint">Phrase</string>
+    <string name="body_hint">Body</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorWhite">#F8F6F6</color>
+    <color name="colorWhiteBlurry">#94F8F6F6</color>
+    <color name="colorPrimary">#0889A2</color>
+    <color name="colorPrimaryDark">#004357</color>
+    <color name="colorGray">#C65A5959</color>
+    <color name="colorDarkGray">#4B5A5959</color>
+    <color name="colorDark">#1D1D1D</color>
+    <color name="colorRed">#EE0D0D</color>
+    <color name="colorViolet">#AEA73DB9</color>
+</resources>

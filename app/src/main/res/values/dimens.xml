@@ -1,0 +1,22 @@
+<resources>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="blog_padding">24dp</dimen>
+    <dimen name="post_padding">18dp</dimen>
+    <dimen name="list_padding">10dp</dimen>
+    <dimen name="photo_padding">2dp</dimen>
+
+    <dimen name="delimeter_margin">6dp</dimen>
+    <dimen name="blog_add_margin">128dp</dimen>
+    <dimen name="blog_vertical_spacing">8dp</dimen>
+    <dimen name="settings_vertical_spacing">15dp</dimen>
+    <dimen name="sign_margin">5dp</dimen>
+
+    <dimen name="post_avatar_size">48dp</dimen>
+    <dimen name="blog_avatar_size">80dp</dimen>
+    <dimen name="max_image_size">200dp</dimen>
+    <dimen name="min_image_size">64dp</dimen>
+
+</resources>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/settings_toolbar"
+        style="@style/Toolbar"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/blog_padding">
+
+        <LinearLayout
+            android:id="@+id/blog_layout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_vertical_spacing">
+
+            <TextView
+                android:id="@+id/settings_blog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/blog"
+                style="@style/TextViewBig"/>
+
+            <EditText
+                android:id="@+id/blog_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:maxLines="1"
+                android:hint="@string/blog_hint"
+                android:imeOptions="actionDone"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/blog_default_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/blog_vertical_spacing"
+            android:text="@string/blog_default"
+            style="@style/TextViewAverageGray"/>
+
+        <LinearLayout
+            android:id="@+id/type_layout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_vertical_spacing">
+
+
+            <TextView
+                android:id="@+id/settings_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/type"
+                style="@style/TextViewBig"/>
+
+            <Spinner
+                android:id="@+id/type_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textSize="24sp"
+                android:layout_marginStart="5dp">
+
+            </Spinner>
+<!--
+            <EditText
+                android:id="@+id/type_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:maxLines="1"
+                android:hint="@string/type_hint"
+                android:imeOptions="actionDone"/>
+-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tag_layout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_vertical_spacing">
+
+            <TextView
+                android:id="@+id/settings_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tag"
+                style="@style/TextViewBig"/>
+
+            <EditText
+                android:id="@+id/tag_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:maxLines="1"
+                android:hint="@string/tag_hint"
+                android:imeOptions="actionDone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/limit_layout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_vertical_spacing">
+
+            <TextView
+                android:id="@+id/settings_limit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/limit"
+                style="@style/TextViewBig"/>
+
+            <EditText
+                android:id="@+id/limit_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:maxLines="1"
+                android:hint="@string/limit_hint"
+                android:imeOptions="actionDone"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/settings_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_vertical_spacing"
+            android:layout_gravity="center_horizontal"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="@string/apply_button"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/settings_vertical_spacing"/>
+<!--
+        <TextView
+            android:id="@+id/type_invalid_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/blog_vertical_spacing"
+            android:text="@string/type_invalid"
+            style="@style/TextViewAverageRed"/>
+-->
+
+        <TextView
+            android:id="@+id/tag_invalid_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/blog_vertical_spacing"
+            android:text="@string/tag_invalid"
+            style="@style/TextViewAverageRed"/>
+
+        <TextView
+            android:id="@+id/limit_invalid_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/blog_vertical_spacing"
+            android:text="@string/limit_invalid"
+            style="@style/TextViewAverageRed"/>
+
+    </LinearLayout>
+
+</LinearLayout>

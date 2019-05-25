@@ -1,0 +1,30 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.spo.tumbleren">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.br" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <dist:module dist:instant="true" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/tumblr"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/tumblr"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.spo.tumbleren.ui.activities.SettingsActivity"/>
+        <activity android:name="com.spo.tumbleren.ui.activities.BlogActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="https" />
+
+
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

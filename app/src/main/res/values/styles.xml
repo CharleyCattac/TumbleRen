@@ -1,0 +1,75 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="fontFamily">@font/fontawesome</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+    
+    <style name="TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/Text</item>
+    </style>
+    
+    <style name="TextViewAverage" parent="TextView">
+        <item name="android:textSize">16dp</item>
+    </style>
+    <style name="TextViewBig" parent="TextView">
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="TextViewLarge" parent="TextView">
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="Text" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/colorDark</item>
+    </style>
+    <style name="TextIcon" parent="Text">
+        <item name="fontFamily">@font/fontawesome</item>
+    </style>
+
+    <style name="TextViewAverageIcon" parent="TextViewAverage">
+        <item name="android:textAppearance">@style/TextIcon</item>
+    </style>
+    <style name="TextViewAverageLink" parent="TextViewAverage">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <style name="TextViewAverageBold" parent="TextViewAverage">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewAverageGray" parent="TextViewAverage">
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+    <style name="TextViewAverageGrayIcon" parent="TextViewAverageGray">
+        <item name="android:textAppearance">@style/TextIcon</item>
+    </style>
+
+    <style name="TextViewAverageRed" parent="TextViewAverage">
+        <item name="android:textColor">@color/colorRed</item>
+    </style>
+
+    <style name="TextViewAverageWhite" parent="TextViewAverage">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="TextViewAverageWhiteBlurry" parent="TextViewAverage">
+        <item name="android:textColor">@color/colorWhiteBlurry</item>
+    </style>
+
+    <style name="TextViewBigLink" parent="TextViewBig">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+</resources>

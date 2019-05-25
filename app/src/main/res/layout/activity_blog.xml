@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/blog_toolbar"
+        style="@style/Toolbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/blog_info"
+                android:padding="@dimen/blog_padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:id="@+id/above_linear_layout"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/blog_avatar"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_width="@dimen/blog_avatar_size"
+                        android:layout_height="@dimen/blog_avatar_size"/>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/blog_name"
+                            android:layout_marginStart="@dimen/blog_padding"
+                            android:text="@string/name_hint"
+                            style="@style/TextViewAverageGray"/>
+
+                        <TextView
+                            android:id="@+id/blog_title"
+                            android:layout_marginStart="@dimen/blog_padding"
+                            android:text="@string/title_hint"
+                            style="@style/TextViewLarge"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/blog_describtion"
+                    android:layout_below="@id/above_linear_layout"
+                    android:text="@string/describtion_hint"
+                    android:layout_marginTop="@dimen/blog_vertical_spacing"
+                    android:layout_marginBottom="@dimen/blog_vertical_spacing"
+                    style="@style/TextViewBig"/>
+
+                <TextView
+                    android:id="@+id/blog_likes"
+                    android:layout_below="@id/blog_describtion"
+                    android:layout_toEndOf="@id/blog_likes_amount"
+                    android:layout_marginLeft="@dimen/sign_margin"
+                    android:text="@string/likes"
+                    style="@style/TextViewAverage"/>
+                <TextView
+                    android:id="@+id/blog_likes_amount"
+                    android:layout_below="@id/blog_describtion"
+                    android:text="@string/likes_hint"
+                    style="@style/TextViewAverageBold"/>
+
+                <TextView
+                    android:id="@+id/blog_posts"
+                    android:layout_below="@id/blog_describtion"
+                    android:layout_toEndOf="@id/blog_posts_amount"
+                    android:layout_marginLeft="@dimen/sign_margin"
+                    android:text="@string/posts"
+                    style="@style/TextViewAverage"/>
+                <TextView
+                    android:id="@+id/blog_posts_amount"
+                    android:layout_below="@id/blog_describtion"
+                    android:text="@string/posts_hint"
+                    android:layout_marginStart="@dimen/blog_add_margin"
+                    style="@style/TextViewAverageBold"/>
+
+                <TextView
+                    android:id="@+id/blog_followers"
+                    android:layout_below="@id/blog_likes"
+                    android:layout_toEndOf="@id/blog_followers_amount"
+                    android:layout_marginLeft="@dimen/sign_margin"
+                    android:text="@string/followers"
+                    style="@style/TextViewAverage"/>
+                <TextView
+                    android:id="@+id/blog_followers_amount"
+                    android:layout_below="@id/blog_likes"
+                    android:text="@string/followers_hint"
+                    style="@style/TextViewAverageBold"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/delimeter_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/delimeter_margin"
+                android:background="@color/colorDarkGray"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/posts_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
