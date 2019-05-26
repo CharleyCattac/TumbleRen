@@ -35,7 +35,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostViewHolder> {
         TYPE_CHAT,
         TYPE_AUDIO,
         TYPE_VIDEO}
-
+    private List<Post> postList = new ArrayList<>();
 
     private final OnItemClickListener listener;
     public interface OnItemClickListener {
@@ -50,7 +50,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostViewHolder> {
         this.listener = listener;
     }
 
-    private List<Post> postList = new ArrayList<>();
     public void setItems(Collection<Post> posts) {
         postList.clear();
         postList.addAll(posts);

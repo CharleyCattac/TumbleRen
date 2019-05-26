@@ -101,11 +101,6 @@ public class BlogActivity extends AppCompatActivity {
     }
 
     @Override
-    public void closeOptionsMenu() {
-        super.closeOptionsMenu();
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_update:{
@@ -197,8 +192,6 @@ public class BlogActivity extends AppCompatActivity {
 
     private void updateActivity(){
         if (getConnectionState(this)){
-            String name = getDefaults("name", BlogActivity.this);
-
             ImportBlogInAsyncTask updateBlog = new ImportBlogInAsyncTask();
             updateBlog.execute();
         }
@@ -213,7 +206,7 @@ public class BlogActivity extends AppCompatActivity {
         setDefaults("limit", "", BlogActivity.this);
     }
 
-    protected Map<String, String> getParamsFromSharedPreferences() {
+    private Map<String, String> getParamsFromSharedPreferences() {
         Map<String, String> params = new HashMap<>();
 
         params.put("name", getDefaults("name", BlogActivity.this));
@@ -235,7 +228,7 @@ public class BlogActivity extends AppCompatActivity {
             blogName.setText(currentBlog.getName());
             blogTitle.setText(currentBlog.getTitle());
             blogDescribtion.setText(currentBlog.getDescription());
-            
+
             likesAmount.setText(String.format(Locale.getDefault(),"%d", currentBlog.getLikeCount()));
             if (likesAmount.getText().toString().equals("0"))
                 likesAmount.setVisibility(View.GONE);

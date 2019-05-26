@@ -26,7 +26,6 @@ import java.util.Map;
 
 public class SettingsActivity extends AppCompatActivity {
     boolean nonEmptyBlogFlag = true;
-    //boolean validTypeFlag = true;
     boolean validTagFlag = true;
     boolean validLimitFlag = true;
 
@@ -34,12 +33,10 @@ public class SettingsActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private EditText blogEdit;
-    //private EditText typeSpin;
     private Spinner typeSpin;
     private EditText tagEdit;
     private EditText limitEdit;
     private TextView blogDefaultView;
-    //private TextView typeInvalidView;
     private TextView tagInvalidView;
     private TextView limitInvalidView;
     private Button applyButton;
@@ -79,8 +76,6 @@ public class SettingsActivity extends AppCompatActivity {
     private void initActivityWidgets() {
         blogDefaultView = findViewById(R.id.blog_default_view);
         blogDefaultView.setVisibility(View.GONE);
-        //typeInvalidView = findViewById(R.id.type_invalid_view);
-        //typeInvalidView.setVisibility(View.GONE);
         tagInvalidView = findViewById(R.id.tag_invalid_view);
         tagInvalidView.setVisibility(View.GONE);
         limitInvalidView = findViewById(R.id.limit_invalid_view);
@@ -104,29 +99,6 @@ public class SettingsActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, types);
         typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpin.setAdapter(typeAdapter);
-        /*
-        typeSpin.addTextChangedListener(new TextValidator(typeSpin) {
-            @Override public void validate(TextView textView, String text) {
-                if(text.isEmpty()){
-                    validTypeFlag = true;
-                    typeInvalidView.setVisibility(View.GONE);
-                    return;
-                }
-                String possibleTypes[] =  {
-                        "text", "photo", "quote", "link", "chat", "audio", "video"
-                };
-                for (String posType : possibleTypes){
-                    if(text.equals(posType)){
-                        validTypeFlag = true;
-                        typeInvalidView.setVisibility(View.GONE);
-                        return;
-                    }
-                }
-                validTypeFlag = false;
-                typeInvalidView.setVisibility(View.VISIBLE);
-            }
-        });
-        */
         tagEdit = findViewById(R.id.tag_value);
         tagEdit.addTextChangedListener(new TextValidator(tagEdit) {
             @Override public void validate(TextView textView, String text) {
@@ -178,12 +150,6 @@ public class SettingsActivity extends AppCompatActivity {
                         Shared.setDefaults("name", blogEdit.getText().toString() + ".tumblr.com", SettingsActivity.this);
                         changeCounter++;
                     }
-                    /*
-                    if(!typeSpin.getText().toString().equals(getDefaults("typeSpin", SettingsActivity.this))) {
-                        Shared.setDefaults("typeSpin", typeSpin.getText().toString(), SettingsActivity.this);
-                        changeCounter++;
-                    }
-                    */
                     if(!typeSpin.getSelectedItem().toString().equals(getDefaults("type", SettingsActivity.this))) {
                         Shared.setDefaults("type", typeSpin.getSelectedItem().toString(), SettingsActivity.this);
                         changeCounter++;
@@ -218,12 +184,8 @@ public class SettingsActivity extends AppCompatActivity {
         String typeValue = params.get("type");
         String tagValue = params.get("tag");
         String limitValue = params.get("limit");
-        /*
-        if(!typeValue.isEmpty())
-            typeSpin.setText(typeValue);
-            */
-        // Sett the spinner to display the selected item from shared preferences.
-        if(blogValue != null)
+
+         if(blogValue != null)
             blogEdit.setText(blogValue.substring(0, blogValue.indexOf(".tumblr")));
 
         typeSpin.setSelection(types.indexOf(typeValue));
