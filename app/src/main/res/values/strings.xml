@@ -21,11 +21,11 @@
     <string name="type">Type:</string>
     <string name="tag">Tag:</string>
     <string name="limit">Limit:</string>
-    <string name="blog_hint">e.g. florbe-triz</string>
+    <string name="blog_hint">e.g. charleycattac</string>
     <string name="type_hint">e.g. text</string>
     <string name="tag_hint">e.g. cats</string>
     <string name="limit_hint">e.g. 20</string>
-    <string name="blog_default">*Default: charleycattac</string>
+    <string name="blog_default">*Default: developers</string>
     <string name="type_invalid">*Type must be only of following values:
                                 text/link/query/photo/video/audio;</string>
     <string name="tag_invalid">*Tag must contain at least one character;</string>

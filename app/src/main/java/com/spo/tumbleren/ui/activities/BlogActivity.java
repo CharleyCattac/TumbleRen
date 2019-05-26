@@ -43,7 +43,7 @@ public class BlogActivity extends AppCompatActivity {
 
     private Stack<String> blogStack;
     private boolean invalidNameFlag = false;
-    private final String DEFAULT_NAME = "charleycattac.tumblr.com";
+    private final String DEFAULT_NAME = "developers.tumblr.com";
 
     private String currentBlogAvatarURL;
     private Blog currentBlog;
