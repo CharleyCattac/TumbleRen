@@ -28,16 +28,12 @@ public class AudioPostViewHolder extends PostViewHolder<AudioPost> {
         audioSign = itemView.findViewById(R.id.audio_sign);
         songName = itemView.findViewById(R.id.song_name);
         artistName = itemView.findViewById(R.id.artist_name);
-        initMediaPlayer();
-    }
-
-
-    private void initMediaPlayer(){
-        mediaPlayer = new MediaPlayer();
-        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
     }
 
     private void setMediaSource(String trackURL) throws IOException {
+        mediaPlayer = null;
+        mediaPlayer = new MediaPlayer();
+        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         mediaPlayer.setDataSource(trackURL);
         mediaPlayer.prepareAsync();
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {

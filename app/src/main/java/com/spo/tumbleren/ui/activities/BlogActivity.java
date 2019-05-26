@@ -35,9 +35,9 @@ import java.util.Map;
 import java.util.Stack;
 
 import static com.spo.tumbleren.utils.connection.ConnectionStateChecker.getConnectionState;
-import static com.spo.tumbleren.utils.shared.Shared.OnPrefChanged;
-import static com.spo.tumbleren.utils.shared.Shared.getDefaults;
-import static com.spo.tumbleren.utils.shared.Shared.setDefaults;
+import static com.spo.tumbleren.utils.shared.Preferences.OnPrefChanged;
+import static com.spo.tumbleren.utils.shared.Preferences.getDefaults;
+import static com.spo.tumbleren.utils.shared.Preferences.setDefaults;
 
 public class BlogActivity extends AppCompatActivity {
 
@@ -49,16 +49,6 @@ public class BlogActivity extends AppCompatActivity {
     private Blog currentBlog;
     private List<Post> currentPosts;
 
-    private Toolbar toolbar;
-    private ImageView blogAvatar;
-    private TextView blogName;
-    private TextView blogTitle;
-    private TextView blogDescribtion;
-    private TextView likesAmount;
-    private TextView postsAmount;
-    private TextView followersAmount;
-
-    private RecyclerView postsView;
     private PostAdapter postAdapter;
 
 
@@ -68,7 +58,7 @@ public class BlogActivity extends AppCompatActivity {
         setContentView(R.layout.activity_blog);
         blogStack = new Stack<>();
 
-        initActivityViews();
+        initToolBar();
         initRecyclerView();
         defineNameInPreferences(DEFAULT_NAME);
 
@@ -127,22 +117,16 @@ public class BlogActivity extends AppCompatActivity {
         }
     }
 
-    private void initActivityViews() {
+    private void initToolBar() {
+        Toolbar toolbar;
         toolbar = findViewById(R.id.blog_toolbar);
         setSupportActionBar(toolbar);
-        blogAvatar = findViewById(R.id.blog_avatar);
-        blogName = findViewById(R.id.blog_name);
-        blogTitle = findViewById(R.id.blog_title);
-        blogDescribtion = findViewById(R.id.blog_describtion);
-        likesAmount = findViewById(R.id.blog_likes_amount);
-        postsAmount = findViewById(R.id.blog_posts_amount);
-        followersAmount = findViewById(R.id.blog_followers_amount);
-
-        postsView = findViewById(R.id.posts_view);
     }
 
     private void initRecyclerView() {
+        RecyclerView postsView = findViewById(R.id.posts_view);
         ViewCompat.setNestedScrollingEnabled(postsView, false);
+
         postsView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         postsView.setLayoutManager(new LinearLayoutManager(this));
         postAdapter = new PostAdapter(new PostAdapter.OnItemClickListener() {
@@ -220,24 +204,29 @@ public class BlogActivity extends AppCompatActivity {
 
     private void fillBlog(){
         try {
+            ImageView blogAvatar = findViewById(R.id.blog_avatar);
+            TextView blogName = findViewById(R.id.blog_name);
+            TextView blogTitle = findViewById(R.id.blog_title);
+            TextView blogDescribtion = findViewById(R.id.blog_describtion);
+            TextView postsAmount = findViewById(R.id.blog_posts_amount);
+
             if (invalidNameFlag) {
                 invalidNameFlag = false;
                 Toast.makeText(BlogActivity.this, "Blog not found! Default name is used.", Toast.LENGTH_LONG).show();
             }
+
             BlogActivity.this.setTitle(currentBlog.getName());
             blogName.setText(currentBlog.getName());
             blogTitle.setText(currentBlog.getTitle());
+            if (blogTitle.getText().toString().isEmpty())
+                blogTitle.setVisibility(View.GONE);
             blogDescribtion.setText(currentBlog.getDescription());
+            if (blogDescribtion.getText().toString().isEmpty())
+                blogDescribtion.setVisibility(View.GONE);
 
-            likesAmount.setText(String.format(Locale.getDefault(),"%d", currentBlog.getLikeCount()));
-            if (likesAmount.getText().toString().equals("0"))
-                likesAmount.setVisibility(View.GONE);
             postsAmount.setText(String.format(Locale.getDefault(),"%d", currentBlog.getPostCount()));
             if (postsAmount.getText().toString().equals("0"))
                 postsAmount.setVisibility(View.GONE);
-            followersAmount.setText(String.format(Locale.getDefault(),"%d", currentBlog.getFollowersCount()));
-            if (followersAmount.getText().toString().equals("0"))
-                followersAmount.setVisibility(View.GONE);
             Picasso.get().load(currentBlogAvatarURL).resize(256, 256).centerCrop().into(blogAvatar);
 
             fillPosts();

@@ -28,9 +28,9 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoViewHolder> {
     }
 
     private List<Photo> photoList = new ArrayList<>();
-    public void setItems(Collection<Photo> posts) {
+    public void setItems(Collection<Photo> photos) {
         photoList.clear();
-        photoList.addAll(posts);
+        photoList.addAll(photos);
         notifyDataSetChanged();
     }
 
