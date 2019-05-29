@@ -244,8 +244,8 @@ public class BlogActivity extends AppCompatActivity {
     private class ImportBlogInAsyncTask extends AsyncTask<String, Void, Boolean> {
         private final ProgressDialog dialog = new ProgressDialog(BlogActivity.this);
         private RenumblrClient client;
-        Map<String, String> params;
-        String name;
+        private Map<String, String> params;
+        private String name;
 
         @Override
         protected void onPreExecute() {

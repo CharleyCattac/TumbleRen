@@ -1,7 +1,6 @@
 package com.spo.tumbleren.utils.shared;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 public class Preferences {

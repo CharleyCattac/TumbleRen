@@ -31,7 +31,7 @@ public class PhotoPostViewHolder extends PostViewHolder<PhotoPost> {
 
         ViewCompat.setNestedScrollingEnabled(photoView, false);
         photoView.setLayoutManager(new LinearLayoutManager(itemView.getContext(),
-                LinearLayoutManager.VERTICAL, false));
+                RecyclerView.VERTICAL, false));
         photoAdapter = new PhotoAdapter(new PhotoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Photo photo) {
