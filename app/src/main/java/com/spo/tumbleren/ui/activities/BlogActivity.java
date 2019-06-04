@@ -147,6 +147,7 @@ public class BlogActivity extends AppCompatActivity {
                             blogStack.push(currentBlog.getName().contains(".tumblr")
                                     ? currentBlog.getName().substring(0, currentBlog.getName().indexOf(".tumblr.com"))
                                     : currentBlog.getName());
+
                             defineNameInPreferences(text);
                             updateActivity();
                         }
