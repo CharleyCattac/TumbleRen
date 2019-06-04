@@ -136,9 +136,8 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (validTagFlag && validLimitFlag){
                     int changeCounter = 0;
-                    if(!blogEdit.getText().toString().equals(getDefaults("name", SettingsActivity.this)
-                            .substring(0, getDefaults("name", SettingsActivity.this).indexOf(".tumblr")))) {
-                        Preferences.setDefaults("name", blogEdit.getText().toString() + ".tumblr.com", SettingsActivity.this);
+                    if(!blogEdit.getText().toString().equals(getDefaults("name", SettingsActivity.this))) {
+                        Preferences.setDefaults("name", blogEdit.getText().toString(), SettingsActivity.this);
                         changeCounter++;
                     }
                     if(!typeSpin.getSelectedItem().toString().equals(getDefaults("type", SettingsActivity.this))) {
@@ -174,7 +173,7 @@ public class SettingsActivity extends AppCompatActivity {
         String limitValue = params.get("limit");
 
         if(blogValue != null)
-            blogEdit.setText(blogValue.substring(0, blogValue.indexOf(".tumblr")));
+            blogEdit.setText(blogValue);
         typeSpin.setSelection(types.indexOf(typeValue));
         if(tagValue != null)
             tagEdit.setText(tagValue);

@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.spo.tumbleren.utils.shared.Preferences;
 import com.squareup.picasso.Picasso;
 import com.spo.tumbleren.R;
 import com.spo.tumbleren.ui.adapters.PostAdapter;
@@ -43,7 +44,7 @@ public class BlogActivity extends AppCompatActivity {
 
     private Stack<String> blogStack;
     private boolean invalidNameFlag = false;
-    private final String DEFAULT_NAME = "developers.tumblr.com";
+    private final String DEFAULT_NAME = "developers";
 
     private String currentBlogAvatarURL;
     private Blog currentBlog;
@@ -139,7 +140,13 @@ public class BlogActivity extends AppCompatActivity {
                     }
                     else {
                         if(text.length() > 0) {
-                            blogStack.push(currentBlog.getName());
+                            if (currentBlog.getName().equals(text)){
+                                Toast.makeText(BlogActivity.this, "You're already inside this blog!", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            blogStack.push(currentBlog.getName().contains(".tumblr")
+                                    ? currentBlog.getName().substring(0, currentBlog.getName().indexOf(".tumblr.com"))
+                                    : currentBlog.getName());
                             defineNameInPreferences(text);
                             updateActivity();
                         }
@@ -257,7 +264,7 @@ public class BlogActivity extends AppCompatActivity {
 
             client = RenumblrClient.getInstance();
             params = getParamsFromSharedPreferences();
-            name = params.get("name");
+            name = params.get("name") + ".tumblr.com";
 
             params.remove("name");
 
